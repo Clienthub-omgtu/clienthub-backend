@@ -1,10 +1,13 @@
 import uuid
 
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 from sqlalchemy import String, ForeignKey, Integer
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base
+
+if TYPE_CHECKING:
+    from src.db.models import LegalEntity
 
 
 class FeedBackAboutClients(Base):

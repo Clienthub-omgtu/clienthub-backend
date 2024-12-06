@@ -46,6 +46,7 @@ class User(Base):
         middlename (Optional[str]): The user's middle name (if applicable).
         role (UserRole): The role of the user, defined as an enumeration.
         password (str): The user's password (hashed).
+        is_registered (bool): The flag of user is registered or no.
         legal_entity_id (Optional[int]): The ID of the legal entity the user belongs to.
 
     Relationships:
@@ -78,6 +79,8 @@ class User(Base):
 
     password: Mapped[str] = mapped_column(String(255), nullable=True)
 
+    is_registered: Mapped[bool] = mapped_column(Boolean, default=False, nullable=True)
+
     legal_entity_id: Mapped[UUID] = mapped_column(
         ForeignKey("legal_entity.id", ondelete="SET NULL"), nullable=False
     )
@@ -85,5 +88,3 @@ class User(Base):
     legal_entity: Mapped[Optional["LegalEntity"]] = relationship(
         "LegalEntity", back_populates="users", lazy="selectin"
     )
-
-    is_registered: Mapped[bool] = mapped_column(Boolean, default=False, nullable=True)

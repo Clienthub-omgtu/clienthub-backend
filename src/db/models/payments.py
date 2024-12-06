@@ -12,24 +12,20 @@ if TYPE_CHECKING:
 
 class Payments(Base):
     """
-    Represents a user in the application.
+    Represents a payment in the application.
 
-    This class maps to the 'users' table in the database and contains
-    attributes related to user information, roles, and relationships with
+    This class maps to the 'payment' table in the database and contains
+    attributes related to payment information and relationships with
     other entities in the application.
 
     Attributes:
-        id (int): The unique identifier for the user.
-        email (str): The user's email address, which must be unique.
-        firstname (str): The user's first name.
-        lastname (str): The user's last name.
-        middlename (Optional[str]): The user's middle name (if applicable).
-        role (UserRole): The role of the user, defined as an enumeration.
-        password (str): The user's password (hashed).
+        id (uuid): The unique identifier for the payment in system.
+        is_confirmed (bool): The flag for status of payment.
+        payment_id (uuid): The unique identifier for the payment in Yookassa service.
         legal_entity_id (Optional[int]): The ID of the legal entity the user belongs to.
 
     Relationships:
-        legal_entity (Optional[LegalEntity]): The legal entity associated with the user.
+        legal_entity (Optional[LegalEntity]): The legal entity associated with the payment.
     """
 
     __tablename__ = "payment"
