@@ -10,26 +10,26 @@ if TYPE_CHECKING:
 
 class LegalEntity(Base):
     """
-        Represents a legal_entity in the application.
+    Represents a legal_entity in the application.
 
-        This class maps to the 'legal_entity' table in the database and contains
-        attributes related to user information and relationships with
-        other entities in the application.
+    This class maps to the 'legal_entity' table in the database and contains
+    attributes related to user information and relationships with
+    other entities in the application.
 
-        Attributes:
-            id (uuid): The unique identifier for the legal entity.
-            email (str): The legal_entity email address, which must be unique.
-            name (str): The legal entity name.
-            ogrn (str): The ogrn legal entity.
-            ogrnip (str): The legal entity.
-            inn (str): The inn of the legal_entity.
-            subscription_expiration_date(DateTime): The subscription_expiration_date legal_entity.
+    Attributes:
+        id (uuid): The unique identifier for the legal entity.
+        email (str): The legal_entity email address, which must be unique.
+        name (str): The legal entity name.
+        ogrn (str): The ogrn legal entity.
+        ogrnip (str): The legal entity.
+        inn (str): The inn of the legal_entity.
+        subscription_expiration_date(DateTime): The subscription_expiration_date legal_entity.
 
-        Relationships:
-            users (User): The legal entity associated with the user.
-            payments (Payments): The legal entity associated with the payments.
-            feedbacks_about_client (FeedBackAboutClients): The legal entity associated with feedbacks.
-        """
+    Relationships:
+        users (User): The legal entity associated with the user.
+        payments (Payments): The legal entity associated with the payments.
+        feedbacks_about_client (FeedBackAboutClients): The legal entity associated with feedbacks.
+    """
 
     __tablename__ = "legal_entity"
 

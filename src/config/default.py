@@ -2,7 +2,7 @@ from pathlib import Path
 
 from fastapi.security import OAuth2PasswordBearer
 from fastapi_mail import ConnectionConfig
-from pydantic import EmailStr, PostgresDsn, RedisDsn, SecretStr
+from pydantic import PostgresDsn, SecretStr
 from passlib.context import CryptContext
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
